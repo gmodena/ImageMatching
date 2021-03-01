@@ -26,8 +26,8 @@ jobs:
         java-version: adopt@1.8
     - run: |
         cd /opt
-        wget http://apachemirror.wuchna.com/spark/spark-2.4.5/spark-2.4.5-bin-hadoop2.7.tgz
-        tar -xzvf spark-2.4.5-bin-hadoop2.7.tgz
+        wget http://apachemirror.wuchna.com/spark/spark-2.4.7/spark-2.4.7-bin-hadoop2.7.tgz
+        tar -xzvf spark-2.4.7-bin-hadoop2.7.tgz
     - run: |
         SPARK_HOME=/opt/spark/spark-2.4.7-bin-hadoop2.7
         PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin 
