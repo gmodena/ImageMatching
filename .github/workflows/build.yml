@@ -25,5 +25,5 @@ jobs:
         pip install -e .
     - name: Test with pytest
       run: |
-        pip install pyspark==2.4.7
+        pip install pyspark
         pytest
