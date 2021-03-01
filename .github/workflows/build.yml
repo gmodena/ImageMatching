@@ -22,8 +22,8 @@ jobs:
         pip install -r requirements.txt
         pip install -e .
     - uses: olafurpg/setup-scala@v10
-        with:
-          java-version: adopt@1.8
+      with:
+        java-version: adopt@1.8
     - run: |
         cd /opt
         wget http://apachemirror.wuchna.com/spark/spark-2.4.5/spark-2.4.5-bin-hadoop2.7.tgz
