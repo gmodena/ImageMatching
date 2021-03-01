@@ -21,13 +21,19 @@ jobs:
       run: |
         pip install -r requirements.txt
         pip install -e .
-    - uses: actions/setup-java@v1
-      with:
-        java-version: '11'
-    - uses: vemonet/setup-spark@v1
-      with:
-        spark-version: '3.0.1' # Exact version
-    - run: spark-submit --version
+    - uses: olafurpg/setup-scala@v10
+        with:
+          java-version: adopt@1.8
+    - run:
+        cd /opt
+        wget http://apachemirror.wuchna.com/spark/spark-2.4.5/spark-2.4.5-bin-hadoop2.7.tgz
+        tar -xzvf spark-2.4.5-bin-hadoop2.7.tgz
+    - run:
+        SPARK_HOME=/opt/spark/spark-2.4.5-bin-hadoop2.7
+        PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin 
+        spark-submit --version
     - name: Test with pytest
       run: |
+        SPARK_HOME=/opt/spark/spark-2.4.5-bin-hadoop2.7
+        PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
         pytest
