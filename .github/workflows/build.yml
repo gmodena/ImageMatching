@@ -30,6 +30,6 @@ jobs:
     - name: Test with pytest
       run: |
         export SPARK_HOME=spark-2.4.7-bin-hadoop2.7/
-        export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-VERSION-src.zip:$PYTHONPATH
+        export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.7-src.zip:$PYTHONPATH
         export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin 
         pytest tests/
