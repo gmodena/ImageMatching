@@ -24,11 +24,11 @@ jobs:
     - uses: olafurpg/setup-scala@v10
         with:
           java-version: adopt@1.8
-    - run:
+    - run: |
         cd /opt
         wget http://apachemirror.wuchna.com/spark/spark-2.4.5/spark-2.4.5-bin-hadoop2.7.tgz
         tar -xzvf spark-2.4.5-bin-hadoop2.7.tgz
-    - run:
+    - run: |
         SPARK_HOME=/opt/spark/spark-2.4.5-bin-hadoop2.7
         PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin 
         spark-submit --version
