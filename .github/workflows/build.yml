@@ -31,7 +31,7 @@ jobs:
     - run: |
         export SPARK_HOME=/opt/spark/spark-2.4.7-bin-hadoop2.7
         export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
-        spark-submit --version
+        /opt/spark/spark-2.4.7-bin-hadoop2.7/bin/spark-submit --version
     - name: Test with pytest
       run: |
         export SPARK_HOME=/opt/spark/spark-2.4.7-bin-hadoop2.7
