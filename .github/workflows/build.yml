@@ -25,9 +25,10 @@ jobs:
       with:
         java-version: adopt@1.8
     - run: |
-        wget http://apachemirror.wuchna.com/spark/spark-2.4.7/spark-2.4.7-bin-hadoop2.7.tgz
-        tar -xzvf spark-2.4.7-bin-hadoop2.7.tgz
+	make install_spark
     - name: Test with pytest
       run: |
-        pip install pyspark 
-        pytest --spark_home=${SPARK_HOME} tests/
+	export SPARK_HOME=/Users/gmodena/repos/wmf/ImageMatching-gmodena/spark-2.4.7-bin-hadoop2.7
+	export PYTHONPATH=${SPARK_HOME}/python:${SPARK_HOME}/python/lib/py4j-0.10.7-src.zip:${PYTHONPATH}
+	export PATH=${PATH}:${SPARK_HOME}/bin:${SPARK_HOME}/sbin
+	make test
