@@ -25,10 +25,10 @@ jobs:
       with:
         java-version: adopt@1.8
     - run: |
-	make install_spark
+        make install_spark
     - name: Test with pytest
       run: |
-	export SPARK_HOME=/Users/gmodena/repos/wmf/ImageMatching-gmodena/spark-2.4.7-bin-hadoop2.7
-	export PYTHONPATH=${SPARK_HOME}/python:${SPARK_HOME}/python/lib/py4j-0.10.7-src.zip:${PYTHONPATH}
-	export PATH=${PATH}:${SPARK_HOME}/bin:${SPARK_HOME}/sbin
-	make test
+        export SPARK_HOME=/Users/gmodena/repos/wmf/ImageMatching-gmodena/spark-2.4.7-bin-hadoop2.7
+        export PYTHONPATH=${SPARK_HOME}/python:${SPARK_HOME}/python/lib/py4j-0.10.7-src.zip:${PYTHONPATH}
+        export PATH=${PATH}:${SPARK_HOME}/bin:${SPARK_HOME}/sbin
+        make test
