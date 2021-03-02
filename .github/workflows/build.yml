@@ -29,4 +29,5 @@ jobs:
         tar -xzvf spark-2.4.7-bin-hadoop2.7.tgz
     - name: Test with pytest
       run: |
+        pip install pyspark 
         pytest --spark_home=${SPARK_HOME} tests/
